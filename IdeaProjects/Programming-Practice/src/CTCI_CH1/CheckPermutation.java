@@ -1,5 +1,6 @@
 package CTCI_CH1;
 
+import java.util.Arrays;
 import java.util.HashMap;
 
 public class CheckPermutation {
@@ -18,8 +19,12 @@ public class CheckPermutation {
      *
      *
      * The time complexity of this algorithm is O(n), where n is the number of characters on one of the strings.
+     * @param s1  input string
+     * @param s2 input string
+     *
+     * @return true if one string is a permutation of the other, false otherwise.
+     *
      */
-
     public static boolean checkPermutation(String s1, String s2){
 
         if(s1.length() != s2.length())
@@ -49,10 +54,38 @@ public class CheckPermutation {
         return true;
     }
 
+    /**
+     *Another way of doing this algorithm is to sort both strings making our time complexity go from
+     * O(n) in the previous algorithm to O(nlogn) as our bottleneck, and then making sure each index
+     * of the new character array is the same.
+     *
+     * @param s1  input string
+     * @param s2 input string
+     *
+     * @return true if one string is a permutation of the other, false otherwise.
+     */
+    public static boolean checkPermutation2(String s1, String s2){
+        if(s1.length() != s2.length())
+            return false;
+
+        char[] charArr1 = s1.toCharArray();
+        char[] charArr2 = s2.toCharArray();
+        Arrays.sort(charArr1);
+        Arrays.sort(charArr2);
+
+        for(int i = 0; i < charArr1.length; i++){
+            if(charArr1[i] != charArr2[i])
+                return false;
+        }
+
+        return true;
+    }
+
 
     //test
     public static void main(String[] args) {
-        System.out.println(checkPermutation("holaaa", "analoh")); //returns false
+
+        System.out.println(checkPermutation2("holaaa", "analoh")); //returns false
     }
 
 }
