@@ -84,7 +84,6 @@ public class CheckPermutation {
 
     //test
     public static void main(String[] args) {
-
         System.out.println(checkPermutation2("holaaa", "analoh")); //returns false
     }
 
