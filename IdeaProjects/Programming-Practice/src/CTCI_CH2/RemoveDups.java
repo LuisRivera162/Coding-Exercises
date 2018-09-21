@@ -1,0 +1,112 @@
+package CTCI_CH2;
+
+import java.util.HashSet;
+
+public class RemoveDups {
+
+    /**
+     * Remove dups:
+     *
+     * Write code to remove duplicates from an unsorted linked list.
+     */
+
+    /**
+     * First thing that comes to mind is to create a has hset in order to store all
+     * the different elements and be able to find data in O(1) time and when iterating
+     * through the linked list if the program finds out that the data of the current
+     * node being iterated is repeated it will remove it from the list in O(1) time
+     * based on the specified method.
+     *
+     * @param start - head of the linked list
+     */
+
+    public static void removeDups(Node start){
+        HashSet<Integer> set = new HashSet<>();
+        Node prev = start;
+
+        while(start != null){
+
+            if(!set.contains(start.data))
+                set.add(start.data);
+
+            else {
+                remove(start, prev);
+                start = prev;
+            }
+
+            prev = start;
+            start = start.next;
+        }
+    }
+
+    /**
+     * Quick remove method executed in O(1) time for the sake of efficiency.
+     *
+     * @param ntd - Node to delete
+     * @param prev - Node before the one you wish to delete
+     */
+    public static void remove(Node ntd, Node prev){
+        prev.setNext(ntd.next);
+        ntd = null;
+    }
+
+    public static void main(String args[]){
+        Node start = new Node(1);
+        Node n = start.setNext(new Node(4));
+        n = n.setNext(new Node(5));
+        n = n.setNext(new Node(6));
+        n = n.setNext(new Node(7));
+        n = n.setNext(new Node(5));
+
+        //linked list = 1 -> 4 -> 5 -> 6 -> 7 -> 5 (dupes are 5s)
+
+        Node test = start;
+
+        System.out.println("List before removing dupes: ");
+        while(test!= null){
+            System.out.print(test.data + " ");
+            test = test.next;
+        }
+
+        System.out.println();
+        System.out.println("List after removing dupes: ");
+
+        removeDups(start);
+
+        while(start!= null){
+            System.out.print(start.data + " ");
+            start = start.next;
+        }
+    }
+
+
+    /**
+     * Standard node
+     */
+    private static class Node{
+
+        private Node next;
+        private int data;
+
+        public Node(int d){
+            this.data = d;
+            this.next = null;
+        }
+
+        public Node(int d, Node n){
+            this.data = d;
+            this.next = n;
+        }
+
+        public Node setNext(Node n){
+            this.next = n;
+            return n;
+        }
+
+        public void setData(int d){
+            this.data = d;
+        }
+
+    }
+}
+
