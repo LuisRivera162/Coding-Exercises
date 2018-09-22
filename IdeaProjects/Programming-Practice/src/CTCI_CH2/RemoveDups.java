@@ -26,8 +26,8 @@ public class RemoveDups {
 
         while(start != null){
 
-            if(!set.contains(start.data))
-                set.add(start.data);
+            if(!set.contains(start.getdata()))
+                set.add(start.getdata());
 
             else {
                 remove(start, prev);
@@ -35,7 +35,7 @@ public class RemoveDups {
             }
 
             prev = start;
-            start = start.next;
+            start = start.getNext();
         }
     }
 
@@ -46,7 +46,7 @@ public class RemoveDups {
      * @param prev - Node before the one you wish to delete
      */
     public static void remove(Node ntd, Node prev){
-        prev.setNext(ntd.next);
+        prev.setNext(ntd.getNext());
         ntd = null;
     }
 
@@ -64,8 +64,8 @@ public class RemoveDups {
 
         System.out.println("List before removing dupes: ");
         while(test!= null){
-            System.out.print(test.data + " ");
-            test = test.next;
+            System.out.print(test.getdata() + " ");
+            test = test.getNext();
         }
 
         System.out.println();
@@ -74,37 +74,8 @@ public class RemoveDups {
         removeDups(start);
 
         while(start!= null){
-            System.out.print(start.data + " ");
-            start = start.next;
-        }
-    }
-
-
-    /**
-     * Standard node
-     */
-    private static class Node{
-
-        private Node next;
-        private int data;
-
-        public Node(int d){
-            this.data = d;
-            this.next = null;
-        }
-
-        public Node(int d, Node n){
-            this.data = d;
-            this.next = n;
-        }
-
-        public Node setNext(Node n){
-            this.next = n;
-            return n;
-        }
-
-        public void setData(int d){
-            this.data = d;
+            System.out.print(start.getdata() + " ");
+            start = start.getNext();
         }
 
     }
