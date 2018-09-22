@@ -50,5 +50,4 @@ public class ReturnKthToLast {
         //output is 2 since the 2nd to last of the linked list is the element 6
 
     }
-
 }
