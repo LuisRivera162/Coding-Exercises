@@ -14,7 +14,9 @@ public class Intersection {
      * all of the nodes in one list into it. once that's done I iterate through
      * the second list and check whether the node being iterated is in the set,
      * if it is not then we keep looking, otherwise, that is the intersecting
-     * node and it's returned.
+     * node and it's returned. The time complexity of this algorithm in the 
+     * worst case is O(n+m) where n is the size of the first list and m the 
+     * size of the second list. 
      *
      * @param s1 - head node of the first linked list
      * @param s2 - head node of the second linked list
