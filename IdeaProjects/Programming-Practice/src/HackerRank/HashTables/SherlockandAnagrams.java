@@ -15,17 +15,15 @@ public class SherlockandAnagrams {
         ArrayList<String> list = new ArrayList<>();
         char[] arr = s.toCharArray();
 
-        for(int i = 0; i < arr.length; i++){
+       for(int i = 0; i < arr.length; i++){
             StringBuilder builder = new StringBuilder();
             builder.append(arr[i]);
-            String str = builder.toString();
-            list.add(str);
-
+            list.add(builder.toString()); 
+            
             for(int  j = i+1; j < arr.length; j++){
                 builder.append(arr[j]);
-                String str1 = builder.toString();
-                list.add(str1);
-            }
+                list.add(builder.toString()); 
+            } 
         }
 
         String[] strList = list.toArray(new String[list.size()]);
