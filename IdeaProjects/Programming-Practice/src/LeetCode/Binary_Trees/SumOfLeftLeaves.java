@@ -23,9 +23,9 @@ class Solution {
         int left = helper(root.left, root);
         int right = helper(root.right, root);
         
-        if(root == parent.left && (root.left == null && root.right == null)){
+        if(root == parent.left && (root.left == null && root.right == null))
             return root.val + left + right;
-        }
+        
         else 
             return left + right; 
         
