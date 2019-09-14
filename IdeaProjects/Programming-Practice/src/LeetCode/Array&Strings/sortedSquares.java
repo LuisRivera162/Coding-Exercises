@@ -13,3 +13,5 @@ class Solution {
 // this was my frist approach, a simple sorting after calculating the squares of each of the elemnts in the array, 
 // however, I looked at other solutions and realized this is not the most efficient way of implementing and I'm
 // currently working on improving this solution based on what I'm reading.
+
+// Current Soltion time complexity: O(nlogn)
