@@ -25,7 +25,7 @@ class Solution {
         if(set.contains(k - root.val))
             return true; 
         
-        if(set.contains(root.val))
+        if(!set.contains(root.val))
             set.add(root.val); 
         
         return fillSet(root.left, set, k) || fillSet(root.right, set, k);
