@@ -40,4 +40,4 @@ class Solution {
     }
 }
 
-//Very inneficient, will work on improving solution.
+//Very inefficient, will work on improving solution.
