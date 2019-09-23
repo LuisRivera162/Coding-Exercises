@@ -39,3 +39,6 @@ class Solution {
         return perimeter; 
     }
 }
+
+// After looking at some solutions I came to realize it's not very clean, there are too many if statements, will work on
+// trying to make my code more cleaner. 
