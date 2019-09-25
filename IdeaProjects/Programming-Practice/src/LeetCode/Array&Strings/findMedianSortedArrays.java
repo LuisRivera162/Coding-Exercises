@@ -15,7 +15,6 @@ class Solution {
             return sortedArr[sortedArr.length/2];
         else {
             double sum = sortedArr[sortedArr.length/2]+sortedArr[(sortedArr.length-1)/2];
-            System.out.println(sum);
             return sum/2; 
         }
     }
