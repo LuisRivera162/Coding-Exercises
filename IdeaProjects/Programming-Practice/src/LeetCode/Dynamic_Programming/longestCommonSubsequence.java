@@ -49,10 +49,13 @@ class Solution {
 }
 
 
-// In this problem I learned how to approach this kind of problem in the sense that common substrings can be made into sub problems by // not considering its last character and returning what the result from the smaller strings plus one because of the matching strings in // this case, do note, this is the case if both characters at the end match, otherwise, we would return the max result from the 
+// In this problem I learned how to approach this kind of problem in the sense that common substrings can be made into sub problems by 
+// not considering its last character and returning what the result from the smaller strings plus one because of the matching strings in
+// this case, do note, this is the case if both characters at the end match, otherwise, we would return the max result from the 
 // recursive call onto,either string1 length -1 and keep string2 the same... or string2-1 in length with s1 keeping the same length. 
 
-// I also got to learned that instead of a proper entry we could have a string representing multiple values by being concatenated, maybe // not the most optimal but could prove to be handy at times, found that implementation really interesting and curious. 
+// I also got to learned that instead of a proper entry we could have a string representing multiple values by being concatenated, maybe
+// not the most optimal but could prove to be handy at times, found that implementation really interesting and curious. 
 
 // Also learned more about bottom up approach to similar problems, hopefully get to implement similar bottom up approaches in the 
 // future. 
