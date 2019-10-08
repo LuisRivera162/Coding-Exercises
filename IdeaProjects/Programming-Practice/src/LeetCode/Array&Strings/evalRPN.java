@@ -49,3 +49,13 @@ class Solution {
     }
     
 }
+
+
+// Notable errors I figured along the way: 
+
+// 1. Noticed the "Character.isDigit(s.charAt(0))" statement was not enough to determine if
+//    the value at the peek was a number, I forgot to account negative numbers.
+
+// 2. when it came to division and substraction, it is important to have the second recursive call 
+//    to be the numerator or the number from which to substract, as the first recursive call 
+//    will not return the next value to be considered (since we're using a stack). 
