@@ -23,3 +23,20 @@ class Solution {
 }
 
 //Working on dp solution
+
+// dp solution: 
+
+class Solutiondp {
+    public int numberOfArithmeticSlices(int[] A) {
+        int result = 0; 
+        int dp = 0;
+        for(int i = 2; i < A.length; i++){
+            if(A[i] - A[i-1] == A[i-1] - A[i-2]){
+                dp++;
+                result += dp;
+            }
+            else dp = 0;
+        }
+        return result; 
+    }
+}
